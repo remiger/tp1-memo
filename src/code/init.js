@@ -5,21 +5,17 @@ import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 
 /***************************************
- * Firebase
- **************************************/
-// Initialiser Firebase
-
-
-/***************************************
  * Firebase Authentication
  **************************************/
 // Initialiser Firebase Authentication
+export const instanceFirebase = initializeApp(firebaseConfig);
 
 // Initialiser l'authentification fédérée Google
-
+export const authFirebase = getAuth();
+export const authGoogle = new GoogleAuthProvider();
 
 /***************************************
  * Firestore
  ***************************************/
 // Initialiser Firestore
-
+export const bdFirestore = getFirestore();
