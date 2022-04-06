@@ -16,10 +16,11 @@ export default function Appli() {
   const [taches, setTaches] = useState([]);
 
   // Fonction gerer l'ajout d'une tache
-  function gererAjoutTache(texte){
+  function gererAjoutTache(texte, complete){
     // Code Firestore...
     creer(utilisateur.uid, {
-      texte: texte
+      texte: texte,
+      complete: complete
     }).then(
       doc => setTaches([{id: doc.id, ...doc.data()}, ...taches])
     )

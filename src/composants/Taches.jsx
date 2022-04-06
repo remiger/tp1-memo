@@ -15,7 +15,7 @@ export default function Taches({utilisateur, gererAjoutTache, taches, setTaches}
 
   return (
     <section className="Taches">
-      <form onSubmit={e => {e.preventDefault(); gererAjoutTache(e.target.elements[0].value); e.target.elements[0].value = ''; }}>
+      <form onSubmit={e => {e.preventDefault(); gererAjoutTache(e.target.elements[0].value, false); e.target.elements[0].value = ''; }}>
         <input 
           type="text"   
           placeholder="Ajoutez une tâche ..." 
