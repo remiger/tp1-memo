@@ -17,7 +17,6 @@ export default function Appli() {
 
   // Fonction gerer l'ajout d'une tache
   function gererAjoutTache(texte){
-    console.log(texte);
     // Code Firestore...
     creer(utilisateur.uid, {
       texte: texte

@@ -15,7 +15,7 @@ export async function lireTout(idUtilisateur){
 export async function creer(idUtilisateur, tache){
     // On ajoute dateModif a l'objet
     const timestamp = new Date();
-    tache.dateModif = timestamp.toLocaleDateString('fr', { 
+    tache.dateModif = '(' + timestamp.toLocaleDateString('fr', { 
         year:"numeric", 
         month:"long", 
         day:"numeric"}) 
@@ -23,7 +23,7 @@ export async function creer(idUtilisateur, tache){
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit'
-      });
+      }) + ')';
     
     let coll = collection(bdFirestore, 'memo', idUtilisateur, 'taches');
     let refDoc = await addDoc(coll, tache);
